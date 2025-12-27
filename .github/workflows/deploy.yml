@@ -22,7 +22,7 @@ jobs:
         uses: pnpm/action-setup@v3
         with:
           version: 8.15.5
-          run_install: false
+          run_install: true
 
       - name: Install dependencies
         run: pnpm install
