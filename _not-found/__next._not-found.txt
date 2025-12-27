@@ -1,4 +1,4 @@
 1:"$Sreact.fragment"
-2:I[55703,["/_next/static/chunks/9e7218c1322a8a0c.js","/_next/static/chunks/fdbf5693945df458.js"],"default"]
-3:I[90714,["/_next/static/chunks/9e7218c1322a8a0c.js","/_next/static/chunks/fdbf5693945df458.js"],"default"]
-0:{"buildId":"nCVELMNYM1FVSR-pRuEsO","rsc":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}],"loading":null,"isPartial":false}
+2:I[55703,["/yogis-yoga/_next/static/chunks/9e7218c1322a8a0c.js","/yogis-yoga/_next/static/chunks/fdbf5693945df458.js"],"default"]
+3:I[90714,["/yogis-yoga/_next/static/chunks/9e7218c1322a8a0c.js","/yogis-yoga/_next/static/chunks/fdbf5693945df458.js"],"default"]
+0:{"buildId":"iB0tvDJFV2pgkE2q0dVef","rsc":["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","template":["$","$L3",null,{}]}]]}],"loading":null,"isPartial":false}
