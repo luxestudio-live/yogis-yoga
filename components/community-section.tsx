@@ -56,7 +56,7 @@ export function CommunitySection() {
         <div className="group relative mb-20 overflow-hidden rounded-3xl">
           <div className="relative aspect-video w-full">
             <img
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/group-yoga-class-students-practicing-together-peac.jpg`}
+              src="/yogis-yoga/group-yoga-class-students-practicing-together-peac.jpg"
               alt="Yogi's Yoga community class"
               className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
