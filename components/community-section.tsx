@@ -56,11 +56,11 @@ export function CommunitySection() {
         <div className="group relative mb-20 overflow-hidden rounded-3xl">
           <div className="relative aspect-video w-full">
             <img
-              src="/yogis-yoga/group-yoga-class-students-practicing-together-peac.jpg"
+              src="/group-yoga-class-students-practicing-together-peac.jpg"
               alt="Yogi's Yoga community class"
               className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-br from-sage/30 via-transparent to-pink-300/30 dark:from-sage/20 dark:to-pink-900/20" />
+            <div className="absolute inset-0 bg-linear-to-br from-sage/30 via-transparent to-pink-300/30 dark:from-sage/20 dark:to-pink-900/20" />
             <div className="absolute inset-0 flex items-center justify-center">
               <motion.a
                 href="https://www.youtube.com/@YogisYoga"
@@ -85,7 +85,7 @@ export function CommunitySection() {
               key={index}
               className="group relative overflow-hidden rounded-3xl border border-border/50 bg-card/30 p-8 text-center backdrop-blur-sm transition-all duration-500 hover:border-sage/50 hover:shadow-2xl dark:hover:border-warm-white/30"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-sage/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100 dark:from-warm-white/5" />
+              <div className="absolute inset-0 bg-linear-to-br from-sage/5 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100 dark:from-warm-white/5" />
 
               <div className="relative">
                 <div className="mb-4 inline-flex rounded-full bg-sage/10 p-4 dark:bg-warm-white/10">

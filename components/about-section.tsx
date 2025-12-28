@@ -38,30 +38,30 @@ export function AboutSection() {
   return (
     <ScrollReveal>
       <section id="about" ref={sectionRef} className="relative min-h-screen w-full px-6 py-32 md:px-12">
-      <div className="absolute left-1/4 top-1/4 h-96 w-96 rounded-full bg-gradient-to-br from-pink-100/30 to-sage/20 blur-3xl dark:from-pink-900/10 dark:to-sage/10" />
-      <div className="absolute right-1/4 top-2/3 h-80 w-80 rounded-full bg-gradient-to-br from-sage/20 to-pink-100/30 blur-3xl dark:from-sage/10 dark:to-pink-900/10" />
+      <div className="absolute left-1/4 top-1/4 h-96 w-96 rounded-full bg-linear-to-br from-pink-100/30 to-sage/20 blur-3xl dark:from-pink-900/10 dark:to-sage/10" />
+      <div className="absolute right-1/4 top-2/3 h-80 w-80 rounded-full bg-linear-to-br from-sage/20 to-pink-100/30 blur-3xl dark:from-sage/10 dark:to-pink-900/10" />
 
       <div className="relative mx-auto max-w-7xl">
         <div className="grid items-center gap-16 lg:grid-cols-2">
           <motion.div style={{ y: imageY }} ref={imageRef} className="relative order-2 lg:order-1">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-3xl">
+            <div className="relative aspect-4/5 overflow-hidden rounded-3xl">
               <img
-                src="/yogis-yoga/peaceful-woman-in-white-doing-yoga-meditation-pose.jpg"
+                src="/peaceful-woman-in-white-doing-yoga-meditation-pose.jpg"
                 alt="Sneha practicing yoga"
                 className="h-full w-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-background/60 to-transparent" />
             </div>
 
             <motion.div
               animate={{ y: [-10, 10, -10], rotate: [0, 5, 0] }}
               transition={{ duration: 6, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
-              className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-gradient-to-br from-sage/30 to-pink-200/30 blur-2xl dark:from-sage/20 dark:to-pink-900/20"
+              className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-linear-to-br from-sage/30 to-pink-200/30 blur-2xl dark:from-sage/20 dark:to-pink-900/20"
             />
             <motion.div
               animate={{ y: [10, -10, 10], rotate: [0, -5, 0] }}
               transition={{ duration: 8, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
-              className="absolute -bottom-8 -left-8 h-40 w-40 rounded-full bg-gradient-to-br from-pink-200/30 to-sage/30 blur-2xl dark:from-pink-900/20 dark:to-sage/20"
+              className="absolute -bottom-8 -left-8 h-40 w-40 rounded-full bg-linear-to-br from-pink-200/30 to-sage/30 blur-2xl dark:from-pink-900/20 dark:to-sage/20"
             />
           </motion.div>
 
@@ -75,7 +75,7 @@ export function AboutSection() {
             <h2 className="mb-8 text-5xl font-light leading-tight tracking-tight text-foreground md:text-6xl lg:text-7xl text-balance">
               Your Dedicated
               <br />
-              <span className="bg-gradient-to-r from-sage via-pink-300 to-sage bg-clip-text text-transparent dark:from-sage-light dark:via-warm-white dark:to-olive-dark">
+              <span className="bg-linear-to-r from-sage via-pink-300 to-sage bg-clip-text text-transparent dark:from-sage-light dark:via-warm-white dark:to-olive-dark">
                 Wellness Guide
               </span>
             </h2>
