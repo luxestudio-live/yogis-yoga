@@ -16,17 +16,48 @@ export function EnquirySection() {
   const sectionRef = useRef<HTMLDivElement>(null)
   const [submitted, setSubmitted] = useState(false)
   const [error, setError] = useState("");
+  const [fieldErrors, setFieldErrors] = useState({
+    fullName: "",
+    phoneNumber: "",
+    email: "",
+    message: "",
+  });
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError("");
+    setFieldErrors({ fullName: "", phoneNumber: "", email: "", message: "" });
     const form = e.currentTarget;
+    const fullName = form.fullName.value.trim();
+    const phoneNumber = form.phoneNumber.value.trim();
+    const email = form.email.value.trim();
+    const message = form.message.value.trim();
+    let valid = true;
+    const newErrors = { fullName: "", phoneNumber: "", email: "", message: "" };
+    if (!fullName) {
+      newErrors.fullName = "Full name is required.";
+      valid = false;
+    }
+    if (!/^[0-9]{10}$/.test(phoneNumber)) {
+      newErrors.phoneNumber = "Phone number must be 10 digits.";
+      valid = false;
+    }
+    if (email && !/^\S+@\S+\.\S+$/.test(email)) {
+      newErrors.email = "Enter a valid email address.";
+      valid = false;
+    }
+    if (!message) {
+      newErrors.message = "Message is required.";
+      valid = false;
+    }
+    setFieldErrors(newErrors);
+    if (!valid) return;
     const data = {
-      fullName: form.fullName.value,
-      phoneNumber: form.phoneNumber.value,
-      email: form.email.value,
+      fullName,
+      phoneNumber,
+      email,
       programInterest: form.programInterest?.value,
-      message: form.message.value,
+      message,
     };
     try {
       const res = await fetch("https://formspree.io/f/mzdbavkv", {
@@ -91,8 +122,8 @@ export function EnquirySection() {
                     </div>
                     <div>
                       <div className="mb-1 text-sm font-light text-muted-foreground">Call or WhatsApp</div>
-                      <div className="text-xl text-foreground">+91 9876543210</div>
-                      <div className="text-sm text-muted-foreground">Sneha Gosai</div>
+                      <div className="text-xl text-foreground">+91 9099888702</div>
+                      <div className="text-sm text-muted-foreground">Yogi's Yoga Studio</div>
                     </div>
                   </motion.a>
 
@@ -103,11 +134,13 @@ export function EnquirySection() {
                     <div>
                       <div className="mb-1 text-sm font-light text-muted-foreground">Location</div>
                       <div className="text-lg leading-relaxed text-foreground">
-                        Near Retnagar Parivar Mahol, Pal
+                        Yogi's Yoga Studio,
+                        Near Parivar Mart,
                         <br />
-                        Opposite Swapnil Society
+                        Opposite Puls Hospital,
                         <br />
-                        Rajkot, Gujarat
+                        New Rail Nagar, Rajkot
+                        360001
                       </div>
                     </div>
                   </motion.div>
@@ -164,10 +197,14 @@ export function EnquirySection() {
                   <Input
                     id="fullName"
                     name="fullName"
-                    placeholder="Your name"
+                    placeholder="Your full name"
                     required
+                    minLength={2}
                     className="h-14 border-border/50 bg-background/50 backdrop-blur-sm transition-all focus:border-sage focus:ring-2 focus:ring-sage/20 dark:focus:border-warm-white dark:focus:ring-warm-white/20"
                   />
+                  {fieldErrors.fullName && (
+                    <div className="text-red-600 text-xs mt-1">{fieldErrors.fullName}</div>
+                  )}
                 </motion.div>
 
                 <motion.div whileFocus={{ scale: 1.01 }} transition={{ duration: 0.2 }}>
@@ -176,10 +213,18 @@ export function EnquirySection() {
                     id="phoneNumber"
                     name="phoneNumber"
                     type="tel"
-                    placeholder="+91 XXXXX XXXXX"
+                    placeholder="10-digit mobile number"
                     required
+                    pattern="[0-9]{10}"
+                    maxLength={10}
+                    minLength={10}
+                    inputMode="numeric"
                     className="h-14 border-border/50 bg-background/50 backdrop-blur-sm transition-all focus:border-sage focus:ring-2 focus:ring-sage/20 dark:focus:border-warm-white dark:focus:ring-warm-white/20"
                   />
+                  <div className="text-xs text-muted-foreground mt-1">Enter your 10-digit mobile number (India only)</div>
+                  {fieldErrors.phoneNumber && (
+                    <div className="text-red-600 text-xs mt-1">{fieldErrors.phoneNumber}</div>
+                  )}
                 </motion.div>
               </div>
 
@@ -189,9 +234,12 @@ export function EnquirySection() {
                   id="email"
                   name="email"
                   type="email"
-                  placeholder="your.email@example.com"
+                  placeholder="your.email@example.com (optional)"
                   className="h-14 border-border/50 bg-background/50 backdrop-blur-sm transition-all focus:border-sage focus:ring-2 focus:ring-sage/20 dark:focus:border-warm-white dark:focus:ring-warm-white/20"
                 />
+                {fieldErrors.email && (
+                  <div className="text-red-600 text-xs mt-1">{fieldErrors.email}</div>
+                )}
               </motion.div>
 
               <motion.div whileFocus={{ scale: 1.01 }} transition={{ duration: 0.2 }}>
@@ -217,8 +265,13 @@ export function EnquirySection() {
                   name="message"
                   placeholder="Tell us about your wellness goals..."
                   rows={5}
+                  required
+                  minLength={5}
                   className="border-border/50 bg-background/50 backdrop-blur-sm transition-all focus:border-sage focus:ring-2 focus:ring-sage/20 dark:focus:border-warm-white dark:focus:ring-warm-white/20"
                 />
+                {fieldErrors.message && (
+                  <div className="text-red-600 text-xs mt-1">{fieldErrors.message}</div>
+                )}
               </motion.div>
 
               <motion.div whileHover={{ scale: 1.01 }} whileTap={{ scale: 0.98 }}>
