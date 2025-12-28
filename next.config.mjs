@@ -11,8 +11,7 @@ const nextConfig = {
     unoptimized: true,
   },
   output: 'export',
-  assetPrefix: isGithubPages ? `/${repoName}/` : undefined,
-  basePath: isGithubPages ? `/${repoName}` : undefined,
+  // assetPrefix and basePath removed for custom domain root deployment
   trailingSlash: true,
 }
 

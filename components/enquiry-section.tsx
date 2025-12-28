@@ -14,13 +14,39 @@ import { Check, Send, Phone, MapPin, Mail } from "lucide-react"
 // ...existing code...
 export function EnquirySection() {
   const sectionRef = useRef<HTMLDivElement>(null)
-  // const isInView = useInView(sectionRef, { once: false, amount: 0.3 })
   const [submitted, setSubmitted] = useState(false)
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    setSubmitted(true)
-    setTimeout(() => setSubmitted(false), 3000)
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setError("");
+    const form = e.currentTarget;
+    const data = {
+      fullName: form.fullName.value,
+      phoneNumber: form.phoneNumber.value,
+      email: form.email.value,
+      programInterest: form.programInterest?.value,
+      message: form.message.value,
+    };
+    try {
+      const res = await fetch("https://formspree.io/f/mzdbavkv", {
+        method: "POST",
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      if (res.ok) {
+        setSubmitted(true);
+        form.reset();
+        setTimeout(() => setSubmitted(false), 3000);
+      } else {
+        setError("Failed to send message. Please try again.");
+      }
+    } catch {
+      setError("Failed to send message. Please try again.");
+    }
   }
   return (
     <ScrollReveal>
@@ -137,6 +163,7 @@ export function EnquirySection() {
                   <label htmlFor="fullName" className="mb-2 block text-sm font-light text-muted-foreground">Full Name</label>
                   <Input
                     id="fullName"
+                    name="fullName"
                     placeholder="Your name"
                     required
                     className="h-14 border-border/50 bg-background/50 backdrop-blur-sm transition-all focus:border-sage focus:ring-2 focus:ring-sage/20 dark:focus:border-warm-white dark:focus:ring-warm-white/20"
@@ -147,6 +174,7 @@ export function EnquirySection() {
                   <label htmlFor="phoneNumber" className="mb-2 block text-sm font-light text-muted-foreground">Phone Number</label>
                   <Input
                     id="phoneNumber"
+                    name="phoneNumber"
                     type="tel"
                     placeholder="+91 XXXXX XXXXX"
                     required
@@ -159,6 +187,7 @@ export function EnquirySection() {
                 <label htmlFor="email" className="mb-2 block text-sm font-light text-muted-foreground">Email Address (Optional)</label>
                 <Input
                   id="email"
+                  name="email"
                   type="email"
                   placeholder="your.email@example.com"
                   className="h-14 border-border/50 bg-background/50 backdrop-blur-sm transition-all focus:border-sage focus:ring-2 focus:ring-sage/20 dark:focus:border-warm-white dark:focus:ring-warm-white/20"
@@ -185,6 +214,7 @@ export function EnquirySection() {
                 <label htmlFor="message" className="mb-2 block text-sm font-light text-muted-foreground">Your Message</label>
                 <Textarea
                   id="message"
+                  name="message"
                   placeholder="Tell us about your wellness goals..."
                   rows={5}
                   className="border-border/50 bg-background/50 backdrop-blur-sm transition-all focus:border-sage focus:ring-2 focus:ring-sage/20 dark:focus:border-warm-white dark:focus:ring-warm-white/20"
@@ -197,18 +227,20 @@ export function EnquirySection() {
                   size="lg"
                   className="h-16 w-full bg-sage text-lg font-light text-warm-white transition-all hover:bg-sage/90 hover:shadow-xl dark:bg-warm-white dark:text-charcoal dark:hover:bg-warm-white/90"
                 >
-                  {submitted ? (
-                    <motion.span initial={{ scale: 0 }} animate={{ scale: 1 }} className="flex items-center gap-3">
-                      <Check className="h-6 w-6" />
-                      Message Sent Successfully
-                    </motion.span>
-                  ) : (
-                    <span className="flex items-center gap-3">
-                      Send Message
-                      <Send className="h-5 w-5" />
-                    </span>
-                  )}
+                  <span className="flex items-center gap-3">
+                    Send Message
+                    <Send className="h-5 w-5" />
+                  </span>
                 </Button>
+                {submitted && (
+                  <div className="mt-4 text-green-600 flex items-center gap-2">
+                    <Check className="h-5 w-5" />
+                    Message Sent Successfully
+                  </div>
+                )}
+                {error && (
+                  <div className="mt-4 text-red-600">{error}</div>
+                )}
               </motion.div>
             </form>
           </div>
