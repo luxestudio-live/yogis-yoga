@@ -1,3 +1,3 @@
-:HL["/yogis-yoga/_next/static/chunks/893bf6046d52fa3a.css","style"]
-:HL["/yogis-yoga/_next/static/chunks/427123e719aad7d1.css","style"]
-0:{"buildId":"NfbXGR5tS1MA32eT8Vjlt","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"/_not-found","paramType":null,"paramKey":"/_not-found","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+:HL["/_next/static/chunks/893bf6046d52fa3a.css","style"]
+:HL["/_next/static/chunks/c813e107f882804e.css","style"]
+0:{"buildId":"XDCU1L14Ka0OmQdGEE2qN","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"/_not-found","paramType":null,"paramKey":"/_not-found","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}

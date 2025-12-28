@@ -1,7 +1,7 @@
 1:"$Sreact.fragment"
-2:I[30611,["/yogis-yoga/_next/static/chunks/fdbf5693945df458.js"],"ViewportBoundary"]
-4:I[30611,["/yogis-yoga/_next/static/chunks/fdbf5693945df458.js"],"MetadataBoundary"]
+2:I[30611,["/_next/static/chunks/fdbf5693945df458.js"],"ViewportBoundary"]
+4:I[30611,["/_next/static/chunks/fdbf5693945df458.js"],"MetadataBoundary"]
 5:"$Sreact.suspense"
-0:{"buildId":"NfbXGR5tS1MA32eT8Vjlt","rsc":["$","$1","h",{"children":[null,["$","$L2",null,{"children":"$@3"}],["$","div",null,{"hidden":true,"children":["$","$L4",null,{"children":["$","$5",null,{"name":"Next.Metadata","children":"$@6"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"loading":null,"isPartial":false}
+0:{"buildId":"XDCU1L14Ka0OmQdGEE2qN","rsc":["$","$1","h",{"children":[null,["$","$L2",null,{"children":"$@3"}],["$","div",null,{"hidden":true,"children":["$","$L4",null,{"children":["$","$5",null,{"name":"Next.Metadata","children":"$@6"}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"loading":null,"isPartial":false}
 3:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
 6:[["$","title","0",{"children":"Sneha - Yoga & Wellness Educator"}],["$","meta","1",{"name":"description","content":"Transform your life through yoga, breathwork, and mindful wellness practices with certified educator Sneha. Online classes, weight loss programs, pranayama, and meditation."}],["$","meta","2",{"name":"generator","content":"Luxestudio"}],["$","meta","3",{"name":"keywords","content":"yoga,wellness,meditation,pranayama,weight loss,online yoga classes"}]]
